@@ -1,0 +1,45 @@
+# Node modules
+node_modules/
+npm-debug.log
+package-lock.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+dist/
+build/
+
+# Logs
+*.log
+logs/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Cache
+.cache/
+*.cache
+
+# Temporary
+temp/
+tmp/
+*.tmp
+
+# Database
+*.db
+*.sqlite
+
+# Backup files
+*.bak
+backup/
