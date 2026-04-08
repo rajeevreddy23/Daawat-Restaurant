@@ -1,0 +1,27 @@
+name: Project Automation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  setup-project-columns:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up project columns
+        uses: actions/github-script@v3
+        with:
+          script: |
+            const project_columns = ['Backlog', 'Ready', 'In Progress', 'In Review', 'Done'];
+            const project = await github.projects.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: 'Project Automation'
+            });
+            for (const column of project_columns) {
+              await github.projects.createColumn({
+                project_id: project.data.id,
+                name: column
+              });
+            }
